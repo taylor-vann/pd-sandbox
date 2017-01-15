@@ -1,0 +1,63 @@
+#N canvas 145 284 617 484 10;
+#X obj 276 267 metro 100;
+#X obj 276 47 inlet;
+#X obj 56 341 tabwrite~ \$0_scope;
+#X obj 57 46 inlet~;
+#X obj 428 267 s \$0_scope;
+#X obj 133 46 inlet;
+#X obj 133 127 route resize tempo;
+#X obj 133 151 t f;
+#X obj 194 151 t f;
+#X obj 336 48 loadbang;
+#X obj 336 113 f \$1;
+#X obj 336 135 select 0;
+#X obj 336 157 f 100;
+#X obj 389 159 t b;
+#X obj 389 181 f \$1;
+#X obj 428 134 select 0;
+#X obj 481 158 t b;
+#X obj 336 82 t b b;
+#X obj 428 112 f \$2;
+#X obj 481 179 f \$2;
+#X obj 428 156 f 200;
+#X obj 101 402 cnv 15 206 62 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 104 403 cnv 15 200 60 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#N canvas 0 119 450 250 (subpatch) 0;
+#X array \$0_scope 200 float 3;
+#A 0 -0.733333 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0;
+#X coords 0 1 200 -1 200 60 2 0 0;
+#X restore 104 403 graph;
+#X msg 428 241 resize \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 24 0;
+#X connect 8 0 0 1;
+#X connect 9 0 17 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 12 0 0 1;
+#X connect 13 0 14 0;
+#X connect 14 0 0 1;
+#X connect 15 0 20 0;
+#X connect 15 1 16 0;
+#X connect 16 0 19 0;
+#X connect 17 0 10 0;
+#X connect 17 1 18 0;
+#X connect 18 0 15 0;
+#X connect 19 0 24 0;
+#X connect 20 0 24 0;
+#X connect 24 0 4 0;
+#X coords 0 -1 1 1 208 66 2 100 400;

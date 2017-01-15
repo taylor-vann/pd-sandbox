@@ -1,0 +1,9 @@
+#N canvas 0 93 450 300 10;
+#X obj 248 83 table allthrough_\$1 \$1;
+#X obj 43 87 loadbang;
+#X obj 43 132 f \$1;
+#X obj 43 156 pack f 1;
+#X msg 43 181 \; allthrough_\$1 const 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;

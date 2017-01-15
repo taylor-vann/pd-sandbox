@@ -1,0 +1,17 @@
+#N canvas 668 374 455 351 10;
+#X text 154 229 in order to define wavetable size \,;
+#X text 161 247 provide an argument for wavebank.;
+#X text 78 60 sinusoidal;
+#X text 237 63 linear;
+#X obj 80 104 Wavebank/lramp \$1;
+#X obj 80 130 Wavebank/rramp \$1;
+#X obj 80 156 Wavebank/triangle \$1;
+#X text 245 264 as in [wavebank 128].;
+#X text 38 36 --Collection of Waveforms--;
+#X obj 239 82 Wavebank/llramp \$1 0.5;
+#X obj 239 108 Wavebank/lrramp \$1 0.5;
+#X obj 239 134 Wavebank/ltriangle \$1 0.25;
+#X obj 239 185 Wavebank/lbent \$1 0.5;
+#X obj 80 79 Wavebank/sine \$1;
+#X obj 80 181 Wavebank/square \$1;
+#X obj 238 159 Wavebank/lsquare \$1 0.3;

@@ -1,0 +1,23 @@
+#N canvas 544 259 514 339 10;
+#X obj 60 50 inlet;
+#X obj 60 78 qwerty/qwerty_route \$0;
+#X obj 60 109 qwerty/octamp_route \$0;
+#X obj 60 169 outlet;
+#X obj 60 139 qwerty/note_route \$0;
+#X obj 343 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 327 39 use a toggle as input;
+#X text 369 55 to turn on/off.;
+#X text 229 87 as a program rhyming with fableton.;
+#X text 243 71 almost uses the same key mappings;
+#X text 279 230 -/= -> octave up and down;
+#X text 279 244 z/x -> velocity up and down;
+#X text 283 195 a--s--d--f--g--h--j--k--l;
+#X text 293 181 w--e-----t--y--u-----o;
+#X text 282 155 c--d--e--f--g--a--b--c--d;
+#X text 295 143 #--#-----#--#--#-----#;
+#X text 28 21 --Qwerty Midi Keyboard--;
+#X text 339 122 -key map-;
+#X connect 0 0 1 0;
+#X connect 4 0 3 0;
+#X coords 0 339 1 338 85 30 0;

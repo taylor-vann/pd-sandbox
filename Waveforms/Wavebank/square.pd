@@ -1,0 +1,13 @@
+#N canvas 792 277 496 289 10;
+#X text 192 107 so if you need a 128 sample waveform \,;
+#X text 304 74 \$1 is first argument.;
+#X text 248 90 it should be the sample size.;
+#X text 234 124 you reference it as square_128.;
+#X obj 70 230 table square_\$1 \$1;
+#X obj 69 94 loadbang;
+#X obj 69 120 f \$1;
+#X text 51 49 -Square Sinusoid-;
+#X msg 69 154 \; square_\$1 sinesum \$1 1 0 0.333333 0 0.2 0 0.142857
+0 0.111111 0 0.090909 0 0.076923 \; square_\$1 normalize 1;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;

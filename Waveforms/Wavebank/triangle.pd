@@ -1,0 +1,13 @@
+#N canvas 0 197 539 292 10;
+#X text 204 86 so if you need a 128 sample waveform \,;
+#X text 316 53 \$1 is first argument.;
+#X text 260 69 it should be the sample size.;
+#X obj 66 210 table triangle_\$1 \$1;
+#X text 232 103 you reference it as triangle_128.;
+#X msg 65 134 \; triangle_\$1 sinesum \$1 1 0 -0.111111 0 0.04 0 -0.020482
+0 0.0123457 0 -0.00826446 0 \; triangle_\$1 normalize 1;
+#X obj 65 74 loadbang;
+#X obj 65 100 f \$1;
+#X text 48 30 -Triangle Sinusoid-;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;

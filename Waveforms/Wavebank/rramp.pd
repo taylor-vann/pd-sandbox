@@ -1,0 +1,14 @@
+#N canvas 64 288 498 273 10;
+#X text 189 80 so if you need a 128 sample waveform \,;
+#X text 301 47 \$1 is first argument.;
+#X text 245 63 it should be the sample size.;
+#X obj 42 203 table rramp_\$1 \$1;
+#X text 238 97 you reference it as rramp_128.;
+#X msg 41 125 \; rramp_\$1 sinesum \$1 -1 -0.5 -0.333333 -0.25 -0.2
+-0.166667 -0.142857 -0.125 -0.111111 -0.1 -0.090909 -0.083333 -0.076923
+\; rramp_\$1 normalize 1;
+#X obj 41 69 loadbang;
+#X obj 41 95 f \$1;
+#X text 28 28 -Right Leaning Ramp Sinusoid-;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
