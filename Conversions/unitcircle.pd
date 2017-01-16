@@ -1,4 +1,4 @@
-#N canvas 0 119 359 265 10;
+#N canvas 0 171 359 265 10;
 #X obj 100 138 sin;
 #X obj 132 139 cos;
 #X obj 100 58 inlet;

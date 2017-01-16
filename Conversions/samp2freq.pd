@@ -1,4 +1,4 @@
-#N canvas 0 145 484 370 10;
+#N canvas 0 158 484 370 10;
 #X text 208 130 Samples to Frequency;
 #X obj 51 67 inlet;
 #X obj 65 357 outlet;

@@ -1,4 +1,4 @@
-#N canvas 0 145 525 355 10;
+#N canvas 0 171 525 355 10;
 #X text 187 169 time to frequency;
 #X text 187 186 1) get time in miliseconds;
 #X text 187 203 2) convert time to seconds;

@@ -1,0 +1,15 @@
+#N canvas 0 132 328 282 10;
+#X obj 82 53 loadbang;
+#X obj 82 75 f 0.5;
+#X obj 82 119 t b f;
+#X obj 82 141 f 100;
+#X obj 82 165 -;
+#X obj 82 96 rmstodb;
+#X obj 82 195 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 2 0;

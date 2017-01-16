@@ -1,0 +1,29 @@
+#N canvas 174 324 501 421 10;
+#X obj 146 249 symbol;
+#X obj 102 186 symbol;
+#X obj 102 216 t s s;
+#X obj 51 318 outlet;
+#X msg 102 160 presets20/preset_\$1.txt;
+#X obj 51 288 presets20/saver;
+#X obj 101 102 cnv 15 324 17 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 102 103 hradio 15 1 0 20 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 409 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 280 251 how to use:;
+#X text 298 269 similar to max-object.;
+#X text 298 283 select option to load.;
+#X text 298 297 press button to save.;
+#X text 280 320 note:;
+#X text 294 353 directory / folder;
+#X text 293 337 only one saver / preset per;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 1;
+#X connect 2 1 0 1;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 0 0;
+#X coords 0 -1 1 1 326 21 2 100 100;

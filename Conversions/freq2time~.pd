@@ -1,4 +1,4 @@
-#N canvas 0 132 466 367 10;
+#N canvas 0 158 466 367 10;
 #X obj 50 67 inlet~;
 #X obj 32 310 outlet~;
 #X text 129 203 Frequency to Time;

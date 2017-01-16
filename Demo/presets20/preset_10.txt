@@ -1,0 +1,3 @@
+foo3 nothing what's good;
+foo 25;
+foo2 118;

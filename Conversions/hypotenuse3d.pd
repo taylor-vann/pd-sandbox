@@ -1,4 +1,4 @@
-#N canvas 629 401 450 300 10;
+#N canvas 623 427 450 300 10;
 #X text 49 34 steering force (x \, y \, z);
 #X text 130 253 hypotenuse/distance;
 #X obj 52 119 t f f;
