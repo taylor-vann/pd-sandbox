@@ -1,0 +1,17 @@
+#N canvas 0 249 555 336 10;
+#X obj 33 235 outlet~;
+#X msg 136 136 1 0 0.333333 0 0.2 0 0.142857 0 0.111111 0 0.090909
+\;;
+#X obj 136 114 loadbang;
+#X obj 35 77 inlet~;
+#X obj 101 79 inlet~;
+#X text 26 58 phasor;
+#X text 95 58 freq;
+#X obj 34 174 aasquare/aaosc~;
+#X obj 34 203 *~ 2;
+#X connect 1 0 7 2;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 7 1;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;

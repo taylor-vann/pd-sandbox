@@ -1,0 +1,16 @@
+#N canvas 230 394 606 309 10;
+#X obj 69 78 inlet~;
+#X text 156 267 anti-aliasing ramp wave;
+#X obj 69 221 outlet~;
+#X obj 69 177 aaramp/aaosc~;
+#X msg 157 133 1 0.5 0.333333 0.25 0.2 0.166667 0.142857 0.125 0.111111
+0.1 0.090909 \;;
+#X obj 157 109 loadbang;
+#X obj 135 80 inlet~;
+#X text 60 59 phasor;
+#X text 129 59 freq;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 2;
+#X connect 5 0 4 0;
+#X connect 6 0 3 1;

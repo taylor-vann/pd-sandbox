@@ -1,0 +1,22 @@
+#N canvas 266 238 600 365 10;
+#X obj 69 78 inlet~;
+#X text 60 59 frequency;
+#X text 156 267 anti-aliasing ramp wave;
+#X msg 61 283 leftramp harmonics 1 0.5 0.333333 0.25 0.2 0.166667 0.142857
+0.125 0.111111 0.1 0.090909 0.083333 0.076923 \;;
+#X obj 69 219 outlet~;
+#X obj 450 215 outlet~;
+#X obj 69 175 aaramp/aaosc~ 1 0.5 0.333333 0.25 0.2 0.166667 0.142857
+0.125 0.111111 0.1 0.090909;
+#X obj 69 149 phasor~;
+#X obj 433 70 inlet;
+#X obj 433 92 t b;
+#X obj 433 114 f 0;
+#X connect 0 0 6 1;
+#X connect 0 0 7 0;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 1;

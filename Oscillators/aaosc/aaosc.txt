@@ -1,0 +1,28 @@
+OscCtl
+sinusoidal component for an anti-aliasing oscillator.  
+
+first inlet
+-phasor input
+
+second inlet
+-frequency
+
+first, both phasor and frequency are multiplied by their harmonic
+number.  an offset is added to the phasor input based on pi/2.
+after reading a cos-lookup table, the sinusoid is multiplied by its
+assigned amplitude.  then it's attenuated by another cos-lookup
+table to prevent aliasing.
+
+this is done by comparing the frequency to the nyquist frequency.  
+we create a ratio of 0-1 and use it to lookup quadrant 3 (pi - 3pi/2),
+add one, and then multiply that to smoothly 'turn off' the oscillator.
+
+finally, we send the sinusoid's amplitude to out of the patch. if the 
+harmonic is even, we turn it off.  eventually we'll add the total 
+amplitudes together and use that total to keep the oscillator's 
+amplitude between (-1, 0, 1).
+
+LOADBANG
+-determine amplitude of an even or odd harmonic (0-even, 1-odd)
+-get the ratio of one over nyquist (1/(samplerate*0.5))
+-get the offset of the sinusoid (harmonic number * 0.25 - 0.25)
