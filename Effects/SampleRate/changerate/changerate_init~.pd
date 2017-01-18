@@ -1,0 +1,18 @@
+#N canvas 773 460 364 308 10;
+#X obj 83 195 samphold~;
+#X obj 143 173 phasor~;
+#X obj 82 56 inlet~;
+#X obj 143 56 inlet~;
+#X obj 83 223 outlet~;
+#X obj 203 57 loadbang;
+#X obj 203 81 samplerate~;
+#X obj 203 104 * 0.5;
+#X obj 143 146 clip~ 1 1;
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 2;
+#X connect 8 0 1 0;
