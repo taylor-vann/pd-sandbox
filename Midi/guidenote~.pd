@@ -1,0 +1,17 @@
+#N canvas 52 279 492 319 10;
+#X obj 71 49 inlet~;
+#X obj 210 54 inlet;
+#X obj 69 236 outlet~;
+#X obj 70 202 guidenote/guidenote_init~;
+#X obj 242 149 guidenote/p \$1_gnparams;
+#X obj 210 123 t a a;
+#X obj 352 51 loadbang;
+#X msg 352 78 0 2 4 5 7 9 11;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 1;
+#X connect 5 1 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
