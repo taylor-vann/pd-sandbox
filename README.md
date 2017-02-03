@@ -20,11 +20,11 @@ Contemporary development is a multi-modal process coupled with the increased cor
 
 I created most of these patches at UCSD between 2011 and 2015 under the instruction of the [Miller Puckette](http://msp.ucsd.edu/) and [Tom Erbe](http://musicweb.ucsd.edu/~terbe/wordpress/).
 
-They were built to help friends and colleagues and myself resolve relatively simple common issues. MAX is a popular proprietary alternative to Pd. It has a lot of functionality Pd doesn't. Installing externals is a little tedius and not very portable. 
+They were built to help friends and colleagues and myself resolve relatively simple common issues. MAX is a popular proprietary alternative to Pd. It has a lot of functionality Pd doesn't. Installing externals is a little tedious and not very portable. 
 
 Everything in this repository is written in Pd-vanilla. Just copy the patches and their support directories into your project directory. It's that easy. 
 
-If you're looking for a place to start lerning Pd, I recommend Dr Hernadez's video [tutorials](https://www.youtube.com/playlist?list=PL12DC9A161D8DC5DC). If you're looking for a more technical introduction to electronic music, please read Miller Puckette's [Theory and Techniques of Electronic Music](http://msp.ucsd.edu/techniques.htm).
+If you're looking for a place to start learning Pd, I recommend Dr Hernadez's video [tutorials](https://www.youtube.com/playlist?list=PL12DC9A161D8DC5DC). If you're looking for a more technical introduction to electronic music, read [Theory and Technique of Electronic Music](http://msp.ucsd.edu/techniques.htm) by Miller Puckette.
 
 ###Contents###
 Here is a list of the general patches and their basic functionality. You could pull the repository and see the *demo.pd* patch. 
