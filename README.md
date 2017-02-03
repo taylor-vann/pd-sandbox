@@ -34,9 +34,13 @@ Here is a list of the general patches and their basic functionality. You could p
 Save and recall patch settings.
 
 p
+
 param
+
 saver
+
 prests
+
 presets20
 
 ####Midi####
@@ -44,12 +48,19 @@ presets20
 Patches to debug and interpret midi.
 
 qwerty
+
 midi\_debug
+
 midi
+
 getnotes
+
 getbend
+
 getcontrols
+
 guidenote
+
 guidenote~
 
 ####Logic####
@@ -57,8 +68,11 @@ guidenote~
 Bits of logic to relieve stress.
 
 channel
+
 onoff
+
 rotund
+
 switch
 
 ####Envelopes####
@@ -66,8 +80,11 @@ switch
 Envelope generators to help control signals.
 
 trigenv~
+
 trigadsr~
+
 sampenv~
+
 sampadsr~
 
 ####Oscillators####
@@ -75,13 +92,21 @@ sampadsr~
 Generators for modulation and synthesis.
 
 wbosc~
+
 wbpwm~
+
 lpwm~
+
 voscillator~
+
 aatri~
+
 aasquare~
+
 aaramp~
+
 aapwm~
+
 aaosc~
 
 
@@ -90,11 +115,17 @@ aaosc~
 Sometimes you just want to make noise.
 
 tuner~
+
 changerate~
+
 changebit~
+
 looper~
+
 delay~
+
 echo~
+
 reverb
 
 ####Panning####
@@ -102,10 +133,15 @@ reverb
 Controls for stereo to 7 speaker surround sound.
 
 panner~
+
 ptwospeakers~
+
 pfourspeakers~
+
 pfivespeakers~
+
 psevenspeakers~
+
 pointone~
 
 ####Wavebanks####
@@ -113,16 +149,27 @@ pointone~
 Wavetables for oscillators.
 
 lbent
+
 lbenttri
+
 llramp
+
 lrramp
+
 lsquare
+
 ltriangle
+
 sine
+
 square
+
 triangle
+
 lramp
+
 rramp
+
 wavebank
 
 ####Windows####
@@ -130,16 +177,27 @@ wavebank
 Windows for analysis functions
 
 allthrough
+
 gausian
+
 hamming
+
 hanning
+
 nuttal
+
 welch
+
 square
+
 bartlett
+
 blackman
+
 blackman-harris
+
 blackman-nuttal
+
 flat-top
 
 ####Conversions####
@@ -147,43 +205,82 @@ flat-top
 Conversions to help with physical emulation.
 
 time2bpm
+
 time2bpm~
+
 time2dist
+
 time2dist~
+
 time2samp
+
 time2sapm~
+
 time2freq
+
 time2freq~
+
 freq2time
+
 freq2time~
+
 freq2samp
+
 freq2samp~
+
 freq2midi
+
 freq2midi~
+
 samp2freq
+
 samp2freq~
+
 samp2time
+
 sampe2time~
+
 bpm2time
+
 bpm2time~
+
 dist2time
+
 dist2time~
+
 midi2freq
+
 midi2freq~
+
 hypotenuse2d
+
 hypotenuse2d~
+
 hypotenuse3d
+
 hypotenuse3d~
+
 unitcircle
+
 unitcircle~
+
 unitsphere
+
 unitsphere~
+
 absolute
+
 absolute~
 
 ####Notes####
 
-For many effects, there are three versions. -The generic \<effect\>~ contains a \[param\] patch that can store your settings with a \[preset\] or \[saver\] patch. -The g\<effect\>~ has the same function as the generic but with a small gui. -The \<effect\>\_init version contains the basic functionality required of the other two. 
+For many effects, there are three versions. 
+
+-The generic \<effect\>~ contains a \[param\] patch that can store your settings with a \[preset\] or \[saver\] patch. 
+
+-The g\<effect\>~ has the same function as the generic but with a small gui. 
+
+-The \<effect\>\_init version contains the basic functionality required of the other two. 
 
 Most of the time, the parameters of the \_init~ versions function at the signal level. So if you'd like to get wild with your modulation, use the \_init~ version.
 
