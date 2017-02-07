@@ -6,284 +6,253 @@ A parliament of patches to help prototyping and audio synthesis written in Pd.
 
 ##Details##
 
-Pd is a wonderful audio playground written by Miller Puckette. He is the MSP in the software formally known as MAX/MSP and a Professor of Computer Music at UCSD. The purpose of this Pd patch collection is to give artists, developers, and users the tools they need to achieve project goals.
+(This repository is currently unfinished. Patches are and being tested and uploaded. Please be patient. Thank you.)
 
-However, for the moment (2017), Pd is at an interesting crossroads. Support for the community-based Pd-extended is dwindling. But support his original repo, the *vanilla* edition, is increasing. Pd has been slowly converted by Peter Brinkmann into a standalone library with the [libPD](https://github.com/libpd/libpd) project.
+Pd is a wonderful audio playground written by Miller Puckette, a Professor of Computer Music at UCSD, and the MSP in the software formally known as MAX/MSP. The purpose of this collection is to give artists, developers, and creators the tools they need to achieve project goals.
 
-Because the original software is written in C, it provides a fast, cross-platform opportunity for a standardized audio routine. Meaning, you could code once and deploy everywhere with reliable results.
+However, for the moment (2017), Pd is at an interesting crossroads. Support for the community-based edition, Pd-extended, is essentially dead. But support for Puckette's original repo, the *vanilla* edition, is increasing. Over the last few years, Pd has been slowly converted by Peter Brinkmann into a standalone library called [libpd](https://github.com/libpd/libpd).
 
-I believe PureData or a similar audio synthesis standard will be necessary for future development. Audio is often a forgotten or neglected part of the user experience.
+Because the original software is written in C, it provides a potential opportunity for a fast, cross-platform, standardized audio routine. Meaning, you could code once and deploy everywhere with the same results.
 
-Contemporary development is a multi-modal process coupled with the increased corporate interest in VR, AR, MR, and *interfaceless* interfaces. Repetitive translation between coding languages and libraries is not a viable option. Pd or a similar library can resolve this.
+Audio is often a forgotten or neglected but fundamental part of the user experience. I believe PureData or a similar audio synthesis standard will be necessary for future development.
+
+Contemporary development is now a multi-modal process. Coupled with the increased corporate interest in VR, AR, MR, and *interfaceless* interfaces, repetitive translation between coding languages and libraries is not a viable option. Pd or a similar library can resolve this.
+
+Consider this repository my own contribution to the cause. Every patch, because they are written in Pd vanilla, will work in libpd. Some effects use preset saves. If read/write access is denied to libpd (*cough* iOS *cough*), please use their corresponding *init~* versions.
 
 ##Usage##
 
-I created most of these patches at UCSD between 2011 and 2015 under the instruction of the [Miller Puckette](http://msp.ucsd.edu/) and [Tom Erbe](http://musicweb.ucsd.edu/~terbe/wordpress/).
+I created most of these patches at UCSD between 2012 and 2014 under the instruction of [Miller Puckette](http://msp.ucsd.edu/), [Tom Erbe](http://musicweb.ucsd.edu/~terbe/wordpress/), and [Peter Otto](http://music.ucsd.edu/b/Peter+Otto).
 
-They were built to help friends and colleagues and myself resolve relatively simple common issues. MAX is a popular proprietary alternative to Pd. It has a lot of functionality Pd doesn't. Installing externals is a little tedious and not very portable. 
+Pd is a open-source alternative to MAX (also originally written by Puckette). It has a lot of functionality missing in Pd, namely preset saving and logic. It's simply a different and minimal piece of software. However, Pd is more portable and less resource hungry. These patches were built to remedy relatively common issues between friends and colleagues and myself.
 
-Everything in this repository is written in Pd-vanilla. Just copy the patches and their support directories into your project directory. It's that easy. 
+If you're looking for a place to learn Pd, I recommend Dr Hernadez's video [tutorials](https://www.youtube.com/playlist?list=PL12DC9A161D8DC5DC). If you're looking for a more technical introduction to electronic music and DSP, read [Theory and Technique of Electronic Music](http://msp.ucsd.edu/techniques.htm) by Miller Puckette.
 
-If you're looking for a place to start learning Pd, I recommend Dr Hernadez's video [tutorials](https://www.youtube.com/playlist?list=PL12DC9A161D8DC5DC). If you're looking for a more technical introduction to electronic music, read [Theory and Technique of Electronic Music](http://msp.ucsd.edu/techniques.htm) by Miller Puckette.
-
+Many of the audio effects are my from own personal research and algorithms. I hope they prove useful.
+ 
+Everything in this repository is written in the vanilla edition of Pd. Just copy the patches (and their support directories) into your project directory. It's that easy. 
+ 
 ###Contents###
+
 Here is a list of the general patches and their basic functionality. You could pull the repository and see the *demo.pd* patch. 
 
 ####Presets####
 
 Save and recall patch settings.
 
-p
+\[param\] or \[p\] - store a number or list
 
-param
+\[saver\] - write and recall params to text file
 
-saver
+\[prests\] - quickly write and recall 10 stores
 
-prests
-
-presets20
+\[presets20\] - quickly write and recall 20 stores
 
 ####Midi####
 
 Patches to debug and interpret midi.
 
-qwerty
+\[qwerty\] - a midi keyboard for your keyboard
 
-midi\_debug
+\[midi\_debug\] - print all midi input
 
-midi
+\[midi\] - required for getnotes, getbend, and getcontrols (only use once)
 
-getnotes
+\[getnotes\] - get notes from midi channel (default 1), requires \[midi\]
 
-getbend
+\[getbend\] - get bend from midi channel (default 1), requires \[midi\]
 
-getcontrols
+\[getcontrols\] - get controls from midi channel (default 1), requires \[midi\]
 
-guidenote
+\[guidenote\] or \[guidenote~\]- curate midi input and signals to set scales
 
-guidenote~
 
 ####Logic####
 
 Bits of logic to relieve stress.
 
-channel
 
-onoff
+\[onoff\] - zero/non-zero input triggers two contrasting zero/non-zero outputs
 
-rotund
+\[switch\] - increment between a range of integers
 
-switch
+\[rotund\] - increment between a range of integers and back around again
+
+\[channel\] - zero/non-zero input directs output between two outputs
 
 ####Envelopes####
 
 Envelope generators to help control signals.
 
-trigenv~
+\[trigenv~\] - envelope triggered by a bang
 
-trigadsr~
+\[trigadsr~\] - ADSR triggered by a bang
 
-sampenv~
+\[sampenv~\] - envelope driven by sample number
 
-sampadsr~
+\[sampadsr~\] - ADSR driven by sample number
 
 ####Oscillators####
 
 Generators for modulation and synthesis.
 
-wbosc~
+\[wbosc~\] - wavebank oscillator, requires \[wavebank\]
 
-wbpwm~
+\[wbpwm~\] - wavebank pulse modulation, requires \[wavebank\]
 
-lpwm~
+\[lpwm~\] - linear pulse width modulation
 
-voscillator~
+\[voscillator~\] - linear variable oscillator
 
-aatri~
+\[aatri~\] - anti-aliasing triangle oscillator
 
-aasquare~
+\[aasquare~\] - anti-aliasing square oscillator
 
-aaramp~
+\[aaramp~\] - anti-aliasing ramp wave oscillator
 
-aapwm~
+\[aapwm~\] - anti-aliasing pulse width modulation oscillator
 
-aaosc~
+\[aaosc~\] - custom harmonics anti-aliasing oscillator
 
 
 ####Effects####
 
 Sometimes you just want to make noise.
 
-tuner~
+\[tuner~\] - a tuner for when you're out of tune
 
-changerate~
+\[changerate~\] - change the samplerate of a signal (0 - nyquist)
 
-changebit~
+\[changebit~\] - change the bit rate of a signal (2 - 24)
 
-looper~
+\[looper~\] - a real, fucntional, live looper
 
-delay~
+\[delay~\] - delay effect
 
-echo~
+\[echo~\] - echo effect
 
-reverb
+\[reverb\] - a quality reverb (small - infinite)
 
 ####Panning####
 
 Controls for stereo to 7 speaker surround sound.
 
-panner~
+\[panner~\] - simple panning between two signal outlets
 
-ptwospeakers~
+\[ptwospeakers~\] - polar panner between two speakers
 
-pfourspeakers~
+\[pfourspeakers~\] - polar panner between four speaker surround sound
 
-pfivespeakers~
+\[pfivespeakers~\] - polar panner between five speaker surround sound
 
-psevenspeakers~
+\[psevenspeakers~\] - polar panner between seven speaker surround sound
 
-pointone~
+\[pointone~\] - low pass filter for bass emphasis and subwoofers
 
-####Wavebanks####
+####Table Lookups####
 
 Wavetables for oscillators.
 
-lbent
+\[lbent\] - linear bent triangle table
 
-lbenttri
+\[llramp\] - linear left-leaning ramp table
 
-llramp
+\[lrramp\] - linear right-leaning ramp table
 
-lrramp
+\[lsquare\] - linear square table
 
-lsquare
+\[ltriangle\] - linear triangle table
 
-ltriangle
+\[sine\] - sine wave
 
-sine
+\[square\] - square wave sinusoid table
 
-square
+\[triangle\] - triangle wave sinusoid table
 
-triangle
+\[lramp\] - left-leaning ramp sinusoid table
 
-lramp
+\[rramp\] - right-leaning ramp sinusoid table
 
-rramp
-
-wavebank
+\[wavebank\] - object containing all tables listed above
 
 ####Windows####
 
 Windows for analysis functions
 
-allthrough
+\[allthrough\] - passes analysis unphased, all values 1
 
-gausian
+\[gaussian\] - gaussian window
 
-hamming
+\[hanning\] - hanning window
 
-hanning
+\[hamming\] - hamming window
 
-nuttal
+\[nuttal\] - nuttal window
 
-welch
+\[welch\] - welch window
 
-square
+\[square\] - sqaure window (good for eliminatin nyquist in analysis)
 
-bartlett
+\[bartlett\] - bartlet window
 
-blackman
+\[blackman\] - blackman window
 
-blackman-harris
+\[blackman-harris\] - blackman-harris window
 
-blackman-nuttal
+\[blackman-nuttal\] - blackman-nuttal
 
-flat-top
+\[flat-top\] - flat-top window
 
 ####Conversions####
 
 Conversions to help with physical emulation.
 
-time2bpm
+\[time2bpm\] or \[time2bpm~\] - convert mS to bpm
 
-time2bpm~
+\[time2dist\] or \[time2dist~\] - convert mS to meters
 
-time2dist
+\[time2samp\] or \[time2sapm~\] - convert mS to number of sample length
 
-time2dist~
+\[time2freq\] or \[time2freq~\] - convert mS to frequency
 
-time2samp
+\[freq2time\] or \[freq2time~\] - convert frequency to mS
 
-time2sapm~
+\[freq2samp\] or \[freq2samp~\] - convert frequency to sample length
 
-time2freq
+\[freq2midi\] or \[freq2midi~\] - convert frequency to midi
 
-time2freq~
+\[midi2freq\] or [midi2freq~\] - convert midi to frequency
 
-freq2time
+\[samp2freq\] or \[samp2freq~\] - convert sample length to frequency
 
-freq2time~
+\[samp2time\] or \[sampe2time~\] - convert sample length to mS
 
-freq2samp
+\[bpm2time\] or \[bpm2time~\] - convert bpm to mS
 
-freq2samp~
+\[dist2time\] or \[dist2time~\] - convert meters to mS
 
-freq2midi
+\[hypotenuse2d\] or \[hypotenuse2d~\] - calculate 2d hypotenuse
 
-freq2midi~
+\[hypotenuse3d\] or \[hypotenuse3d~\] - calulate 3d hypotenuse
 
-samp2freq
+\[unitcircle\] or \[unitcircle~\] - calculate point on the unit circle
 
-samp2freq~
+\[unitsphere\] or \[unitsphere~\] - calculate point on the unit sphere
 
-samp2time
-
-sampe2time~
-
-bpm2time
-
-bpm2time~
-
-dist2time
-
-dist2time~
-
-midi2freq
-
-midi2freq~
-
-hypotenuse2d
-
-hypotenuse2d~
-
-hypotenuse3d
-
-hypotenuse3d~
-
-unitcircle
-
-unitcircle~
-
-unitsphere
-
-unitsphere~
-
-absolute
-
-absolute~
+\[absolute\] or \[absolute~\] - calculate absolute value (unnecessary)
 
 ####Notes####
 
 For many effects, there are three versions. 
 
--The generic \<effect\>~ contains a \[param\] patch that can store your settings with a \[preset\] or \[saver\] patch. 
+-The generic \<effect\>~ contains a \[param\] patch that stores your settings with a \[preset\] or \[saver\] patch. 
 
 -The g\<effect\>~ has the same function as the generic but with a small gui. 
 
 -The \<effect\>\_init version contains the basic functionality required of the other two. 
 
-Most of the time, the parameters of the \_init~ versions function at the signal level. So if you'd like to get wild with your modulation, use the \_init~ version.
+Most \_init~ versions function at the signal level. So if you'd like to get wild with your modulation, use the \_init~ version.
 
 ##License##
 
-Release under the GNU [GPLv3]() Licence
+Released for students, artists, and instructors under the GNU [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) Licence.

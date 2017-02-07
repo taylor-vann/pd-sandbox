@@ -1,0 +1,11 @@
+#N canvas 0 119 472 195 10;
+#X obj 21 134 table sine_\$1 \$1;
+#X text 110 49 so if you need a 128 sample waveform \,;
+#X text 222 16 \$1 is first argument.;
+#X text 166 32 it should be the sample size.;
+#X text 166 66 you reference it as sine_128.;
+#X msg 21 97 \; sine_\$1 sinesum \$1 1;
+#X obj 21 47 loadbang;
+#X obj 21 73 f \$1;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
