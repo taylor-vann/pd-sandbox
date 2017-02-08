@@ -1,0 +1,17 @@
+#N canvas 0 106 450 300 10;
+#X obj 123 104 max~ 0;
+#X obj 71 103 min~ 0;
+#X obj 104 164 +~;
+#X obj 71 129 *~ -1;
+#X obj 101 61 inlet~;
+#X obj 105 224 outlet~;
+#X text 231 107 Shouldn't be neccessary.;
+#X text 231 125 However in case you use;
+#X text 238 143 a legacy version of Pd.;
+#X text 35 29 --Absolute Value--;
+#X connect 0 0 2 1;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 0 0;

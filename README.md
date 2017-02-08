@@ -2,39 +2,39 @@
 
 ##Abstract##
 
-A parliament of patches to help prototyping and audio synthesis written in Pd.
+A parliament of Pd patches for prototyping and audio synthesis.
 
 ##Details##
 
 (This repository is currently unfinished. Patches are and being tested and uploaded. Please be patient. Thank you.)
 
-Pd is a wonderful audio playground written by Miller Puckette, a Professor of Computer Music at UCSD, and the MSP in the software formally known as MAX/MSP. The purpose of this collection is to give artists, developers, and creators the tools they need to achieve project goals.
+The purpose of this collection is to give artists, developers, and creators the tools they need to achieve project goals without getting deep in the dirt with the acoustics behind the effects required.
 
-However, for the moment (2017), Pd is at an interesting crossroads. Support for the community-based edition, Pd-extended, is essentially dead. But support for Puckette's original repo, the *vanilla* edition, is increasing. Over the last few years, Pd has been slowly converted by Peter Brinkmann into a standalone library called [libpd](https://github.com/libpd/libpd).
+However, for the moment (2017), Pd is at an interesting crossroads. Support for the community-based edition, Pd-extended, is essentially dead. But Puckette's original repo, the *vanilla* edition, is gaining support. 
 
-Because the original software is written in C, it provides a potential opportunity for a fast, cross-platform, standardized audio routine. Meaning, you could code once and deploy everywhere with the same results.
+Because the original software is written in C, there is a potential opportunity for a fast, cross-platform, standardized audio routine. Meaning, you could code once and deploy everywhere with the same results. Consequentially, over the last few years Pd has been slowly converted by Peter Brinkmann into the stand-alone library [libpd](https://github.com/libpd/libpd).
 
-Audio is often a forgotten or neglected but fundamental part of the user experience. I believe PureData or a similar audio synthesis standard will be necessary for future development.
+Contemporary development is now a multi-modal process. Audio is often a forgotten or neglected but fundamental part of the user experience. Coupled with the increased corporate interest in VR, AR, MR, and interface-less interfaces, repetitive translation between coding languages and libraries is not a viable option. I believe PureData or a similar audio synthesis standard will be necessary for consistent development.
 
-Contemporary development is now a multi-modal process. Coupled with the increased corporate interest in VR, AR, MR, and *interfaceless* interfaces, repetitive translation between coding languages and libraries is not a viable option. Pd or a similar library can resolve this.
+Consider this repository my own small contribution to the cause. Every patch, because they are written in Pd vanilla, will work in libpd. Some effects use preset saves. If read/write access is denied to libpd (\*cough\* iOS \*cough\*), please use their corresponding \<effect\_\>*init~* versions and refrain from using the \[p\], \[param\], \[saver\], \[presets\], or \[presets20\] patches.
 
-Consider this repository my own contribution to the cause. Every patch, because they are written in Pd vanilla, will work in libpd. Some effects use preset saves. If read/write access is denied to libpd (*cough* iOS *cough*), please use their corresponding *init~* versions.
+If you're interested in custom audio effects or if there is anything missing in in this collection, please don't hesitate to contact me.
 
 ##Usage##
 
-I created most of these patches at UCSD between 2012 and 2014 under the instruction of [Miller Puckette](http://msp.ucsd.edu/), [Tom Erbe](http://musicweb.ucsd.edu/~terbe/wordpress/), and [Peter Otto](http://music.ucsd.edu/b/Peter+Otto).
+I created most of these patches at UCSD between 2012 and 2014 under the instruction of [Miller Puckette](http://msp.ucsd.edu/), [Tom Erbe](http://musicweb.ucsd.edu/~terbe/wordpress/), and [Peter Otto](http://music.ucsd.edu/b/Peter+Otto). I'm currently revising and updating them (2017).
 
-Pd is a open-source alternative to MAX (also originally written by Puckette). It has a lot of functionality missing in Pd, namely preset saving and logic. It's simply a different and minimal piece of software. However, Pd is more portable and less resource hungry. These patches were built to remedy relatively common issues between friends and colleagues and myself.
+Pd is a open-source alternative to MAX (both originally written by Puckette). Ithas some expected functionality missing in Pd, namely preset saving and logic. Pd is simply a different piece of software. However, Pd is more portable and less resource hungry. These patches were built to remedy shared issues and frustrations between friends, colleagues, and myself.
 
-If you're looking for a place to learn Pd, I recommend Dr Hernadez's video [tutorials](https://www.youtube.com/playlist?list=PL12DC9A161D8DC5DC). If you're looking for a more technical introduction to electronic music and DSP, read [Theory and Technique of Electronic Music](http://msp.ucsd.edu/techniques.htm) by Miller Puckette.
+If you're looking for a place to learn the basics of Pd, I recommend Dr Hernadez's [video tutorials](https://www.youtube.com/playlist?list=PL12DC9A161D8DC5DC) or Johannes Kreidler's [loadbang tutorials](http://www.pd-tutorial.com/). If you're looking for a more technical introduction to electronic music and DSP, read Theory and Technique of [Electronic Music](http://msp.ucsd.edu/techniques.htm) by Miller Puckette.
 
-Many of the audio effects are my from own personal research and algorithms. I hope they prove useful.
- 
 Everything in this repository is written in the vanilla edition of Pd. Just copy the patches (and their support directories) into your project directory. It's that easy. 
  
 ###Contents###
 
-Here is a list of the general patches and their basic functionality. You could pull the repository and see the *demo.pd* patch. 
+These patches provide common audio effects, preset saves, midi control, anti-aliasing oscillators, fun noisy aliasing oscillators, surround-sound panning, conversions between audio units (samples, time, frequency, distance), ADSRs, wavetables, and windows for analysis.
+
+Here is a list of the general patches and their basic functionality. You could also pull the repository and open the *demo.pd* patch. 
 
 ####Presets####
 
@@ -44,7 +44,7 @@ Save and recall patch settings.
 
 \[saver\] - write and recall params to text file
 
-\[prests\] - quickly write and recall 10 stores
+\[presets\] - quickly write and recall 10 stores
 
 \[presets20\] - quickly write and recall 20 stores
 
@@ -66,11 +66,9 @@ Patches to debug and interpret midi.
 
 \[guidenote\] or \[guidenote~\]- curate midi input and signals to set scales
 
-
 ####Logic####
 
 Bits of logic to relieve stress.
-
 
 \[onoff\] - zero/non-zero input triggers two contrasting zero/non-zero outputs
 
@@ -92,7 +90,7 @@ Envelope generators to help control signals.
 
 \[sampadsr~\] - ADSR driven by sample number
 
-####Oscillators####
+####Generators####
 
 Generators for modulation and synthesis.
 
@@ -112,8 +110,7 @@ Generators for modulation and synthesis.
 
 \[aapwm~\] - anti-aliasing pulse width modulation oscillator
 
-\[aaosc~\] - custom harmonics anti-aliasing oscillator
-
+\[aaosc~\] - anti-aliasing oscillator for up to 10 custom harmonics
 
 ####Effects####
 
@@ -121,31 +118,47 @@ Sometimes you just want to make noise.
 
 \[tuner~\] - a tuner for when you're out of tune
 
+\[looper~\] - a real, fucntional, live looper
+
 \[changerate~\] - change the samplerate of a signal (0 - nyquist)
 
 \[changebit~\] - change the bit rate of a signal (2 - 24)
 
-\[looper~\] - a real, fucntional, live looper
+\[gate~\] - gate a signal
 
-\[delay~\] - delay effect
+\[limiter~\] - attenuate amplitude when signals pass certain threshold
 
-\[echo~\] - echo effect
+\[compressar~\] - squeeze the dynamic range of a signal
 
-\[reverb\] - a quality reverb (small - infinite)
+\[expander~\] - increase amplitude when signals are below a threshold
+
+\[delay~\] - delay a signal
+
+\[echo~\] - create an echo
+
+\[reverb\] - an infinite reverb
+
+\[tremolo~\] - modulate amplitude with a variable oscillator
+
+\[leslier\] - rotating speaker emulation
+
+\[flanger\] - modulated delay with feedback
+
+\[chorus\] - filtered modulated delay with feedback 
 
 ####Panning####
 
-Controls for stereo to 7 speaker surround sound.
+Controls for stereo and surround sound.
 
 \[panner~\] - simple panning between two signal outlets
 
 \[ptwospeakers~\] - polar panner between two speakers
 
-\[pfourspeakers~\] - polar panner between four speaker surround sound
+\[pfourspeakers~\] - polar panner between four speaker surround-sound
 
-\[pfivespeakers~\] - polar panner between five speaker surround sound
+\[pfivespeakers~\] - polar panner between five speaker surround-sound
 
-\[psevenspeakers~\] - polar panner between seven speaker surround sound
+\[psevenspeakers~\] - polar panner between seven speaker surround-sound
 
 \[pointone~\] - low pass filter for bass emphasis and subwoofers
 
@@ -179,19 +192,17 @@ Wavetables for oscillators.
 
 Windows for analysis functions
 
-\[allthrough\] - passes analysis unphased, all values 1
-
-\[gaussian\] - gaussian window
+\[allthrough\] - unphased analysis, all table values are 1
 
 \[hanning\] - hanning window
 
 \[hamming\] - hamming window
 
+\[gaussian\] - gaussian window
+
 \[nuttal\] - nuttal window
 
 \[welch\] - welch window
-
-\[square\] - sqaure window (good for eliminatin nyquist in analysis)
 
 \[bartlett\] - bartlet window
 
@@ -202,6 +213,8 @@ Windows for analysis functions
 \[blackman-nuttal\] - blackman-nuttal
 
 \[flat-top\] - flat-top window
+
+\[square\] - sqaure window (eliminate nyquist in analysis)
 
 ####Conversions####
 
@@ -245,7 +258,7 @@ Conversions to help with physical emulation.
 
 For many effects, there are three versions. 
 
--The generic \<effect\>~ contains a \[param\] patch that stores your settings with a \[preset\] or \[saver\] patch. 
+-The generic \<effect\>~ contains a \[param\] patch that stores your settings in conjunction with a \[preset\] or \[saver\] patch. 
 
 -The g\<effect\>~ has the same function as the generic but with a small gui. 
 
