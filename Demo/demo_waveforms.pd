@@ -1,0 +1,20 @@
+#N canvas 0 106 520 379 10;
+#X text 44 45 ++++LINEAR AND SINUSOIDAL WAVEFORMS++++;
+#X obj 67 476 ../Waveforms/wavebank 256;
+#X text 65 84 sinusoidal;
+#X text 65 247 linear;
+#X text 45 416 Wavebank;
+#X obj 68 104 ../Waveforms/sine 128;
+#X obj 68 128 ../Waveforms/lramp 128;
+#X obj 67 154 ../Waveforms/rramp 128;
+#X obj 67 180 ../Waveforms/triangle 128;
+#X obj 67 205 ../Waveforms/square 128;
+#X obj 67 266 ../Waveforms/llramp 128 0.5;
+#X obj 67 292 ../Waveforms/lrramp 128 0.5;
+#X obj 67 318 ../Waveforms/ltriangle 128 0.25;
+#X obj 66 343 ../Waveforms/lsquare 128 0.3;
+#X obj 67 369 ../Waveforms/lbent 128 0.5;
+#X text 44 505 ++++++++;
+#X text 66 433 Contains all above waveforms at the same table length
+;
+#X text 66 450 First argument: table length;

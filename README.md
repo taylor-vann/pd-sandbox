@@ -36,18 +36,6 @@ These patches provide common audio effects, preset saves, midi control, anti-ali
 
 Here is a list of the general patches and their basic functionality. You could also pull the repository and open the *demo.pd* patch. 
 
-####Presets####
-
-Save and recall patch settings.
-
-\[param\] or \[p\] - store a number or list
-
-\[saver\] - write and recall params to text file
-
-\[presets\] - quickly write and recall 10 stores
-
-\[presets20\] - quickly write and recall 20 stores
-
 ####Midi####
 
 Patches to debug and interpret midi.
@@ -78,111 +66,55 @@ Bits of logic to relieve stress.
 
 \[channel\] - zero/non-zero input directs output between two outputs
 
-####Envelopes####
+####Presets####
 
-Envelope generators to help control signals.
+Save and recall patch settings.
 
-\[trigenv~\] - envelope triggered by a bang
+\[param\] or \[p\] - store a number or list
 
-\[trigadsr~\] - ADSR triggered by a bang
+\[saver\] - write and recall params to text file
 
-\[sampenv~\] - envelope driven by sample number
+\[presets\] - quickly write and recall 10 stores
 
-\[sampadsr~\] - ADSR driven by sample number
+\[presets20\] - quickly write and recall 20 stores
 
-####Samples####
+####Conversions####
 
-Objects to help with sample manipulation
+Conversions to help with physical emulation.
 
-\[sampleplay~\] - play a file from disk
+\[time2bpm\] or \[time2bpm~\] - convert mS to bpm
 
-\[sampleload~\] - load a sample to a table (required for most sample objects)
+\[time2dist\] or \[time2dist~\] - convert mS to meters
 
-\[scratch\] or \[scratch~\] - swipe through a sample
+\[time2samp\] or \[time2sapm~\] - convert mS to number of sample length
 
-\[trigplay~\] - play a sample from one position to the other with a bang
+\[time2freq\] or \[time2freq~\] - convert mS to frequency
 
-\[tapeplay~\] - play a sample from one position to the other by sample number
+\[freq2time\] or \[freq2time~\] - convert frequency to mS
 
-\[trigggrain~\] - time-stretch and pitch-shift independently with a bang
+\[freq2samp\] or \[freq2samp~\] - convert frequency to sample length
 
-\[tapegrain~\] - time-stretch and pitch-shift independently by sample number
+\[freq2midi\] or \[freq2midi~\] - convert frequency to midi
 
-\[sampletable~\] - write a signal to a table
+\[midi2freq\] or [midi2freq~\] - convert midi to frequency
 
-\[samplesave~\] - write a signal to disk
+\[samp2freq\] or \[samp2freq~\] - convert sample length to frequency
 
-####Generators####
+\[samp2time\] or \[sampe2time~\] - convert sample length to mS
 
-Generators for modulation and synthesis.
+\[bpm2time\] or \[bpm2time~\] - convert bpm to mS
 
-\[wbosc~\] - wavebank oscillator, requires \[wavebank\]
+\[dist2time\] or \[dist2time~\] - convert meters to mS
 
-\[wbpwm~\] - wavebank pulse modulation, requires \[wavebank\]
+\[hypotenuse2d\] or \[hypotenuse2d~\] - calculate 2d hypotenuse
 
-\[lpwm~\] - linear pulse width modulation
+\[hypotenuse3d\] or \[hypotenuse3d~\] - calulate 3d hypotenuse
 
-\[voscillator~\] - linear variable oscillator
+\[unitcircle\] or \[unitcircle~\] - calculate point on the unit circle
 
-\[aatri~\] - anti-aliasing triangle oscillator
+\[unitsphere\] or \[unitsphere~\] - calculate point on the unit sphere
 
-\[aasquare~\] - anti-aliasing square oscillator
-
-\[aaramp~\] - anti-aliasing ramp wave oscillator
-
-\[aapwm~\] - anti-aliasing pulse width modulation oscillator
-
-\[aaosc~\] - anti-aliasing oscillator for up to 10 custom harmonics
-
-####Effects####
-
-Sometimes you just want to make noise.
-
-\[tuner~\] - a tuner for when you're out of tune
-
-\[looper~\] - a real, fucntional, live looper
-
-\[changerate~\] - change the samplerate of a signal (0 - nyquist)
-
-\[changebit~\] - change the bit rate of a signal (2 - 24)
-
-\[gate~\] - gate a signal
-
-\[limiter~\] - attenuate amplitude when signals pass certain threshold
-
-\[compressar~\] - squeeze the dynamic range of a signal
-
-\[expander~\] - increase amplitude when signals are below a threshold
-
-\[delay~\] - delay a signal
-
-\[echo~\] - create an echo
-
-\[reverb~\] - an infinite reverb
-
-\[tremolo~\] - modulate amplitude with a variable oscillator
-
-\[leslie~\] - rotating speaker emulation
-
-\[flanger~\] - modulated delay with feedback
-
-\[chorus~\] - filtered modulated delay with feedback 
-
-####Panning####
-
-Controls for stereo and surround sound.
-
-\[panner~\] - simple panning between two signal outlets
-
-\[ptwospeakers~\] - polar panner between two speakers
-
-\[pfourspeakers~\] - polar panner between four speaker surround-sound
-
-\[pfivespeakers~\] - polar panner between five speaker surround-sound
-
-\[psevenspeakers~\] - polar panner between seven speaker surround-sound
-
-\[pointone~\] - low pass filter for bass emphasis and subwoofers
+\[absolute\] or \[absolute~\] - calculate absolute value (unnecessary)
 
 ####Table Lookups####
 
@@ -238,43 +170,113 @@ Windows for analysis functions
 
 \[square\] - sqaure window (eliminate nyquist in analysis)
 
-####Conversions####
+####Generators####
 
-Conversions to help with physical emulation.
+Generators for modulation and synthesis.
 
-\[time2bpm\] or \[time2bpm~\] - convert mS to bpm
+\[wbosc~\] - wavebank oscillator, requires \[wavebank\]
 
-\[time2dist\] or \[time2dist~\] - convert mS to meters
+\[wbpwm~\] - wavebank pulse modulation, requires \[wavebank\]
 
-\[time2samp\] or \[time2sapm~\] - convert mS to number of sample length
+\[lpwm~\] - linear pulse width modulation
 
-\[time2freq\] or \[time2freq~\] - convert mS to frequency
+\[voscillator~\] - linear variable oscillator
 
-\[freq2time\] or \[freq2time~\] - convert frequency to mS
+\[aatri~\] - anti-aliasing triangle oscillator
 
-\[freq2samp\] or \[freq2samp~\] - convert frequency to sample length
+\[aasquare~\] - anti-aliasing square oscillator
 
-\[freq2midi\] or \[freq2midi~\] - convert frequency to midi
+\[aaramp~\] - anti-aliasing ramp wave oscillator
 
-\[midi2freq\] or [midi2freq~\] - convert midi to frequency
+\[aapwm~\] - anti-aliasing pulse width modulation oscillator
 
-\[samp2freq\] or \[samp2freq~\] - convert sample length to frequency
+\[aaosc~\] - anti-aliasing oscillator for up to 10 custom harmonics
 
-\[samp2time\] or \[sampe2time~\] - convert sample length to mS
+####Samples####
 
-\[bpm2time\] or \[bpm2time~\] - convert bpm to mS
+Objects to help with sample manipulation
 
-\[dist2time\] or \[dist2time~\] - convert meters to mS
+\[sampleplay~\] - play a file from disk
 
-\[hypotenuse2d\] or \[hypotenuse2d~\] - calculate 2d hypotenuse
+\[sampleload~\] - load a sample to a table (required for most sample objects)
 
-\[hypotenuse3d\] or \[hypotenuse3d~\] - calulate 3d hypotenuse
+\[scratch\] or \[scratch~\] - swipe through a sample
 
-\[unitcircle\] or \[unitcircle~\] - calculate point on the unit circle
+\[trigplay~\] - play a sample from one position to the other with a bang
 
-\[unitsphere\] or \[unitsphere~\] - calculate point on the unit sphere
+\[tapeplay~\] - play a sample from one position to the other by sample number
 
-\[absolute\] or \[absolute~\] - calculate absolute value (unnecessary)
+\[trigggrain~\] - time-stretch and pitch-shift independently with a bang
+
+\[tapegrain~\] - time-stretch and pitch-shift independently by sample number
+
+\[sampletable~\] - write a signal to a table
+
+\[samplesave~\] - write a signal to disk
+
+####Envelopes####
+
+Envelope generators to help control signals.
+
+\[trigenv~\] - envelope triggered by a bang
+
+\[trigadsr~\] - ADSR triggered by a bang
+
+\[sampenv~\] - envelope driven by sample number
+
+\[sampadsr~\] - ADSR driven by sample number
+
+####Effects####
+
+Sometimes you just want to make noise.
+
+\[changerate~\] - change the samplerate of a signal (0 - nyquist)
+
+\[changebit~\] - change the bit rate of a signal (2 - 24)
+
+\[gate~\] - gate a signal
+
+\[limiter~\] - attenuate amplitude when signals pass certain threshold
+
+\[compressar~\] - squeeze the dynamic range of a signal
+
+\[expander~\] - increase amplitude when signals are below a threshold
+
+\[delay~\] - delay a signal
+
+\[echo~\] - create an echo
+
+\[reverb~\] - an infinite reverb
+
+\[tremolo~\] - modulate amplitude with a variable oscillator
+
+\[leslie~\] - rotating speaker emulation
+
+\[flanger~\] - modulated delay with feedback
+
+\[chorus~\] - filtered modulated delay with feedback 
+
+####Panning####
+
+Controls for stereo and surround sound.
+
+\[panner~\] - simple panning between two signal outlets
+
+\[ptwospeakers~\] - polar panner between two speakers
+
+\[pfourspeakers~\] - polar panner between four speaker surround-sound
+
+\[pfivespeakers~\] - polar panner between five speaker surround-sound
+
+\[psevenspeakers~\] - polar panner between seven speaker surround-sound
+
+\[pointone~\] - low pass filter for bass emphasis and subwoofers
+
+####Tools####
+
+\[tuner~\] - a tuner for when you're out of tune
+
+\[looper~\] - a real, fucntional, live looper
 
 ####Notes####
 

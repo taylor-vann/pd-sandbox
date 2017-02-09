@@ -1,0 +1,43 @@
+#N canvas 0 93 450 300 10;
+#X floatatom 68 129 5 0 0 0 - - -, f 5;
+#X text 46 35 ++++LOGIC++++;
+#X floatatom 68 234 5 0 0 0 - - -, f 5;
+#X floatatom 68 340 5 0 0 0 - - -, f 5;
+#X floatatom 68 402 5 0 0 0 - - -, f 5;
+#X floatatom 68 450 5 0 0 0 - - -, f 5;
+#X floatatom 142 129 5 0 0 0 - - -, f 5;
+#X obj 156 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 156 449 5 0 0 0 - - -, f 5;
+#X obj 68 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 177 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 68 292 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 177 292 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 47 516 ++++PRESETS++++;
+#X text 46 59 OnOff;
+#X text 46 164 Switch;
+#X text 46 273 Round;
+#X text 46 380 Channel;
+#X obj 68 82 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 68 104 ../Logic/onoff;
+#X obj 68 209 ../Logic/switch 7 3;
+#X obj 68 315 ../Logic/rotund 5 2;
+#X obj 68 425 ../Logic/channel;
+#X connect 4 0 22 0;
+#X connect 7 0 22 1;
+#X connect 9 0 20 0;
+#X connect 10 0 20 1;
+#X connect 11 0 21 0;
+#X connect 12 0 21 1;
+#X connect 18 0 19 0;
+#X connect 19 0 0 0;
+#X connect 19 1 6 0;
+#X connect 20 0 2 0;
+#X connect 21 0 3 0;
+#X connect 22 0 5 0;
+#X connect 22 1 8 0;

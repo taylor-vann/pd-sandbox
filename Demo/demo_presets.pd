@@ -1,0 +1,37 @@
+#N canvas 0 93 515 347 10;
+#X floatatom 67 126 5 0 0 0 - - -, f 5;
+#X floatatom 67 174 5 0 0 0 - - -, f 5;
+#X text 47 38 ++++PRESETS++++;
+#X floatatom 217 126 5 0 0 0 - - -, f 5;
+#X floatatom 217 174 5 0 0 0 - - -, f 5;
+#X text 63 417 [Demo/presets];
+#X text 64 497 [Demo/presets20];
+#X text 65 75 Demo directory is to show functionality.;
+#X msg 67 288 save_name;
+#X obj 149 287 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 100 311 load_name;
+#X text 47 104 Param or P;
+#X text 47 267 Saver;
+#X text 47 367 Presets;
+#X text 47 447 Presets20;
+#X text 65 62 Use objects in Presets directory.;
+#X text 66 197 To save and recal values give [p] or [param] a unique
+id.;
+#X text 66 211 Do not use pd's \$0 argument as it is randomized.;
+#X text 66 226 Use [saver] \, [presets] \, or [presets20] to save and
+recall;
+#X text 66 240 all [p] and [param] values in your patch.;
+#X obj 67 150 param var1;
+#X obj 217 150 p var1;
+#X obj 67 335 saver;
+#X obj 67 394 presets;
+#X obj 67 474 presets20;
+#X text 47 549 ++++++++;
+#X connect 0 0 20 0;
+#X connect 3 0 21 0;
+#X connect 8 0 22 0;
+#X connect 9 0 22 2;
+#X connect 10 0 22 1;
+#X connect 20 0 1 0;
+#X connect 21 0 4 0;

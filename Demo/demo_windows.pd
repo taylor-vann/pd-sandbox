@@ -1,0 +1,18 @@
+#N canvas 0 93 490 515 10;
+#X text 35 34 ++++WINDOWS FOR GRAINS AND FFT++++;
+#X obj 57 460 ../Windows/windows 128 4;
+#X text 37 437 Window Bank;
+#X text 40 59 First Argument: table length;
+#X obj 57 81 ../Windows/hanning 128;
+#X obj 57 106 ../Windows/hamming 128;
+#X obj 57 130 ../Windows/welch 128;
+#X obj 57 155 ../Windows/bartlett 128;
+#X obj 57 181 ../Windows/blackman 128;
+#X obj 57 206 ../Windows/nuttall 128;
+#X obj 57 232 ../Windows/blackman-nuttall 128;
+#X obj 56 258 ../Windows/blackman-harris 128;
+#X obj 57 282 ../Windows/flat-top 128;
+#X obj 57 347 ../Windows/gaussian 128 4;
+#X text 37 323 Second Argument: gaussian bend;
+#X text 37 373 Second Argument: offset (0-1);
+#X obj 57 396 ../Windows/square 512 0.5;
