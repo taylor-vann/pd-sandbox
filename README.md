@@ -10,7 +10,7 @@ A parliament of Pd patches for prototyping and audio synthesis.
 
 The purpose of this collection is to give artists, developers, and creators the tools they need to achieve project goals without getting deep in the dirt with the acoustics behind the effects required.
 
-However, for the moment (2017), Pd is at an interesting crossroads. Support for the community-based edition, Pd-extended, is essentially dead. But Puckette's original repo, the *vanilla* edition, is gaining support. 
+However, Pd is at an interesting crossroads. Support for the community-based edition, Pd-extended, is essentially dead. But Puckette's original repo, the *vanilla* edition, is gaining support. 
 
 Because the original software is written in C, there is a potential opportunity for a fast, cross-platform, standardized audio routine. Meaning, you could code once and deploy everywhere with the same results. Consequentially, over the last few years Pd has been slowly converted by Peter Brinkmann into the stand-alone library [libpd](https://github.com/libpd/libpd).
 
@@ -32,7 +32,7 @@ Everything in this repository is written in the vanilla edition of Pd. Just copy
  
 ###Contents###
 
-These patches provide common audio effects, preset saves, midi control, anti-aliasing oscillators, fun noisy aliasing oscillators, surround-sound panning, conversions between audio units (samples, time, frequency, distance), ADSRs, wavetables, and windows for analysis.
+These patches provide common audio effects, preset saves, midi control, anti-aliasing oscillators, sample manipulation, fun noisy aliasing oscillators, surround-sound panning, conversions between audio units (samples, time, frequency, distance), ADSRs, wavetables, and windows for analysis.
 
 Here is a list of the general patches and their basic functionality. You could also pull the repository and open the *demo.pd* patch. 
 
@@ -90,6 +90,28 @@ Envelope generators to help control signals.
 
 \[sampadsr~\] - ADSR driven by sample number
 
+####Samples####
+
+Objects to help with sample manipulation
+
+\[sampleplay~\] - play a file from disk
+
+\[sampleload~\] - load a sample to a table (required for most sample objects)
+
+\[scratch\] or \[scratch~\] - swipe through a sample
+
+\[trigplay~\] - play a sample from one position to the other with a bang
+
+\[tapeplay~\] - play a sample from one position to the other by sample number
+
+\[trigggrain~\] - time-stretch and pitch-shift independently with a bang
+
+\[tapegrain~\] - time-stretch and pitch-shift independently by sample number
+
+\[sampletable~\] - write a signal to a table
+
+\[samplesave~\] - write a signal to disk
+
 ####Generators####
 
 Generators for modulation and synthesis.
@@ -136,15 +158,15 @@ Sometimes you just want to make noise.
 
 \[echo~\] - create an echo
 
-\[reverb\] - an infinite reverb
+\[reverb~\] - an infinite reverb
 
 \[tremolo~\] - modulate amplitude with a variable oscillator
 
-\[leslier\] - rotating speaker emulation
+\[leslie~\] - rotating speaker emulation
 
-\[flanger\] - modulated delay with feedback
+\[flanger~\] - modulated delay with feedback
 
-\[chorus\] - filtered modulated delay with feedback 
+\[chorus~\] - filtered modulated delay with feedback 
 
 ####Panning####
 
