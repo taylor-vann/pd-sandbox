@@ -1,10 +1,10 @@
-#Pd Sandbox#
+# Pd Sandbox #
 
-##Abstract##
+## Abstract ##
 
 A parliament of Pd patches for prototyping and audio synthesis.
 
-##Details##
+## Details ##
 
 (This repository is currently unfinished. Patches are and being tested and uploaded. Please be patient. Thank you.)
 
@@ -20,7 +20,7 @@ Consider this repository my own small contribution to the cause. Every patch, be
 
 If you're interested in custom audio effects or if there is anything missing in in this collection, please don't hesitate to contact me.
 
-##Usage##
+## Usage ##
 
 I created most of these patches at UCSD between 2012 and 2014 under the instruction of [Miller Puckette](http://msp.ucsd.edu/), [Tom Erbe](http://musicweb.ucsd.edu/~terbe/wordpress/), and [Peter Otto](http://music.ucsd.edu/b/Peter+Otto). I'm currently revising and updating them (2017).
 
@@ -30,13 +30,13 @@ If you're looking for a place to learn the basics of Pd, I recommend Dr Hernadez
 
 Everything in this repository is written in the vanilla edition of Pd. Just copy the patches (and their support directories) into your project directory. It's that easy. 
  
-###Contents###
+### Contents ###
 
 These patches provide common audio effects, preset saves, midi control, anti-aliasing oscillators, sample manipulation, fun noisy aliasing oscillators, surround-sound panning, conversions between audio units (samples, time, frequency, distance), ADSRs, wavetables, and windows for analysis.
 
 Here is a list of the general patches and their basic functionality. You could also pull the repository and open the *demo.pd* patch. 
 
-####Midi####
+#### Midi ####
 
 Patches to debug and interpret midi.
 
@@ -54,7 +54,7 @@ Patches to debug and interpret midi.
 
 \[guidenote\] or \[guidenote~\]- curate midi input and signals to set scales
 
-####Logic####
+#### Logic ####
 
 Bits of logic to relieve stress.
 
@@ -66,7 +66,7 @@ Bits of logic to relieve stress.
 
 \[channel\] - zero/non-zero input directs output between two outputs
 
-####Presets####
+#### Presets ####
 
 Save and recall patch settings.
 
@@ -78,7 +78,7 @@ Save and recall patch settings.
 
 \[presets20\] - quickly write and recall 20 stores
 
-####Conversions####
+#### Conversions ####
 
 Conversions to help with physical emulation.
 
@@ -116,7 +116,7 @@ Conversions to help with physical emulation.
 
 \[absolute\] or \[absolute~\] - calculate absolute value (unnecessary)
 
-####Table Lookups####
+#### Table Lookups ####
 
 Wavetables for oscillators.
 
@@ -142,7 +142,7 @@ Wavetables for oscillators.
 
 \[wavebank\] - object containing all tables listed above
 
-####Windows####
+#### Windows ####
 
 Windows for analysis functions
 
@@ -170,7 +170,7 @@ Windows for analysis functions
 
 \[square\] - sqaure window (eliminate nyquist in analysis)
 
-####Generators####
+#### Generators ####
 
 Generators for modulation and synthesis.
 
@@ -192,7 +192,7 @@ Generators for modulation and synthesis.
 
 \[aaosc~\] - anti-aliasing oscillator for up to 10 custom harmonics
 
-####Samples####
+#### Samples ####
 
 Objects to help with sample manipulation
 
@@ -214,7 +214,7 @@ Objects to help with sample manipulation
 
 \[samplesave~\] - write a signal to disk
 
-####Envelopes####
+#### Envelopes ####
 
 Envelope generators to help control signals.
 
@@ -226,7 +226,7 @@ Envelope generators to help control signals.
 
 \[sampadsr~\] - ADSR driven by sample number
 
-####Effects####
+#### Effects ####
 
 Sometimes you just want to make noise.
 
@@ -256,7 +256,7 @@ Sometimes you just want to make noise.
 
 \[chorus~\] - filtered modulated delay with feedback 
 
-####Panning####
+#### Panning ####
 
 Controls for stereo and surround sound.
 
@@ -272,13 +272,13 @@ Controls for stereo and surround sound.
 
 \[pointone~\] - low pass filter for bass emphasis and subwoofers
 
-####Tools####
+#### Tools ####
 
 \[tuner~\] - a tuner for when you're out of tune
 
 \[looper~\] - a real, fucntional, live looper
 
-####Notes####
+#### Notes ####
 
 For many effects, there are three versions. 
 
@@ -290,6 +290,6 @@ For many effects, there are three versions.
 
 Most \_init~ versions function at the signal level. So if you'd like to get wild with your modulation, use the \_init~ version.
 
-##License##
+## License ##
 
 Released for students, artists, and instructors under the GNU [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) Licence.
